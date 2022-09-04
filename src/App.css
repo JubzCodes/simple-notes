@@ -9,10 +9,19 @@
   min-height: 170px
 }
 
+.App {
+  max-width: 1060px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 .notes-list {
   display: grid;
-  grid-gap: 1rem;grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-
+  align-items: center;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .footer {
