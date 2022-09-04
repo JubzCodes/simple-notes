@@ -9,6 +9,12 @@
   min-height: 170px
 }
 
+.notes-list {
+  display: grid;
+  grid-gap: 1rem;grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+}
+
 .footer {
   display: flex;
   flex-direction: row;
