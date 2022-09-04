@@ -12,8 +12,12 @@ const Note = () => {
       <div className='footer'>
         <span>date</span>
         <div className='buttons'>
+        <span className='edit' title='Edit'>
         <FontAwesomeIcon icon={faPenToSquare} />
+        </span>
+        <span className='delete' title='Delete'>
         <FontAwesomeIcon icon={faTrashCan}/>
+        </span>
         </div>
       </div>
     </div>
