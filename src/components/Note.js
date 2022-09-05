@@ -51,7 +51,10 @@ const Note = ({ id, text, date, handleEdit, handleDelete }) => {
               onChange={handleChange}
             />
             <div className="footer">
-              <span>{edit? (charLimit - edit.text.length):(charLimit - text.length)} Remaining</span>
+              <span>
+                {edit ? charLimit - edit.text.length : charLimit - text.length}{" "}
+                Remaining
+              </span>
               <span className="save" title="Save Change" onClick={saveEdit}>
                 <FontAwesomeIcon icon={faCircleCheck} size="lg" />
               </span>
@@ -64,14 +67,15 @@ const Note = ({ id, text, date, handleEdit, handleDelete }) => {
           <div className="footer">
             <span>{date}</span>
             <div className="buttons">
-              <span className="edit" title="Edit" onClick={handleClick}>
+              <span title="Edit" onClick={handleClick}>
                 <FontAwesomeIcon
+                  className="edit-icon"
                   icon={faPenToSquare}
                   onClick={() => setEdit({ id: id, text: text, date: date })}
                 />
               </span>
-              <span className="delete" title="Delete" onClick={() => handleDelete(id)}>
-                <FontAwesomeIcon icon={faTrashCan} />
+              <span title="Delete" onClick={() => handleDelete(id)}>
+                <FontAwesomeIcon className="delete" icon={faTrashCan} />
               </span>
             </div>
           </div>

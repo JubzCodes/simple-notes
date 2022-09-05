@@ -37,6 +37,10 @@ h1 {
   box-shadow: 0.25rem 0.25rem 0rem rgb(248, 248, 112);
 }
 
+.note.edit {
+  background-color: #848383;
+}
+
 textarea {
   border: none;
   resize: none;
@@ -46,6 +50,7 @@ textarea {
 
 textarea:focus {
   outline: none;
+  background-color: #848383;
 }
 
 textarea::placeholder {
@@ -87,7 +92,12 @@ textarea::placeholder {
   gap: 5px;
 }
 
-.edit:hover, .delete:hover {
+.edit-icon:hover {
+  cursor: pointer;
+  color: #848383;
+}
+
+.delete:hover {
   cursor: pointer;
   color: #848383;
 }
