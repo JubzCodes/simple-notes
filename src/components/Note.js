@@ -38,6 +38,7 @@ const Note = ({ id, text, date, handleEdit }) => {
           <div className="note edit">
             <textarea
               autoFocus
+              onFocus={(e) => e.currentTarget.select()}
               rows="8"
               cols="10"
               value={edit && edit.text}
@@ -58,7 +59,10 @@ const Note = ({ id, text, date, handleEdit }) => {
             <span>{date}</span>
             <div className="buttons">
               <span className="edit" title="Edit" onClick={handleClick}>
-                <FontAwesomeIcon icon={faPenToSquare} onClick={() => setEdit({id: id, text: text, date: date})} />
+                <FontAwesomeIcon
+                  icon={faPenToSquare}
+                  onClick={() => setEdit({ id: id, text: text, date: date })}
+                />
               </span>
               <span className="delete" title="Delete">
                 <FontAwesomeIcon icon={faTrashCan} />
