@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
-const NewNote = () => {
+const NewNote = ({ handleSave }) => {
 
   //TEXT STATE
   const [text, setText] = useState("");
@@ -12,12 +12,16 @@ const NewNote = () => {
     setText(e.target.value)
   }
 
+  const Save = () => {
+    handleSave(text)
+  }
+
   return (
     <div className='note new'>
       <textarea rows='8' cols='10' placeholder='Add a new note :)' value={text} onChange={handleChange} ></textarea>
       <div className='footer'>
         <span>200 Remaining</span>
-        <span className='save' title='Save'>
+        <span className='save' title='Save' onClick={Save}>
           <FontAwesomeIcon icon={faCircleCheck} size="lg" />
         </span>
       </div>

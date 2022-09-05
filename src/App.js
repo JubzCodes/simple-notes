@@ -35,6 +35,14 @@ function App() {
   ]);
 
 
+  const addNote = (text) => {
+    if (text) {
+      let num = notes.length + 1;
+      let date = new Date();
+      setNotes([...notes, { id: num, text: text, date: date.toLocaleString() }]);
+    }
+  }
+
 
   return (
     <div className="App">
@@ -48,7 +56,7 @@ function App() {
         <FontAwesomeIcon icon={faTimes}/>
       </span>
       </div>
-      <NoteList notes={notes}/>
+      <NoteList notes={notes} handleSave={addNote}/>
     </div>
   );
 }
