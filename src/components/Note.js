@@ -20,12 +20,12 @@ const Note = ({ id, text, date, handleEdit }) => {
     }
     setEdit(edited);
   };
-
+  
   const handleClick = (e) => {
     e.preventDefault();
     setClicked(true);
   }
-
+  
   const saveEdit = () => {
     handleEdit(edit);
     setClicked(false);
@@ -37,6 +37,7 @@ const Note = ({ id, text, date, handleEdit }) => {
         <>
           <div className="note edit">
             <textarea
+              autoFocus
               rows="8"
               cols="10"
               value={edit && edit.text}
