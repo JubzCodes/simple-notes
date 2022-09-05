@@ -6,6 +6,7 @@ import { faMagnifyingGlass, faTimes } from "@fortawesome/free-solid-svg-icons";
 function App() {
   return (
     <div className="App">
+      <h1>Simple Notes</h1>
       <div className='search-bar'>
         <span className='search-icon'>
         <FontAwesomeIcon icon={faMagnifyingGlass} />
