@@ -22,6 +22,7 @@
   align-items: center;
   grid-gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding-top: 20px;
 }
 
 .footer {
@@ -39,3 +40,28 @@
 .edit, .delete {
   cursor: pointer;
 }
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #3f3c3c;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  color: white;
+  box-shadow: 0.25rem 0.25rem 0rem #848383;
+}
+
+.search-bar input {
+  margin: 0 0.5rem 0 0.5rem;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: white;
+}
+
+::placeholder {
+  color: #848383;
+}
+
