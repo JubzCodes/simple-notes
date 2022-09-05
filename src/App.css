@@ -9,6 +9,28 @@
   min-height: 170px
 }
 
+.note.new {
+  background-color: #848383;
+}
+
+textarea {
+  border: none;
+  resize: none;
+  background-color: transparent;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+textarea::placeholder {
+  color: white;
+}
+
+.save {
+  cursor: pointer;
+}
+
 .App {
   max-width: 1060px;
   margin-left: auto;
@@ -61,7 +83,7 @@
   color: white;
 }
 
-::placeholder {
+.search-bar input::placeholder {
   color: #848383;
 }
 

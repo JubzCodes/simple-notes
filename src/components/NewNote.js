@@ -8,8 +8,8 @@ const NewNote = () => {
       <textarea rows='8' cols='10' placeholder='Add a new note :)' ></textarea>
       <div className='footer'>
         <span>200 Remaining</span>
-        <span>
-          <FontAwesomeIcon icon={faCircleCheck} />
+        <span className='save' title='Save'>
+          <FontAwesomeIcon icon={faCircleCheck} size="lg" />
         </span>
       </div>
     </div>
