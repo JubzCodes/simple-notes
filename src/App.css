@@ -31,6 +31,10 @@ textarea::placeholder {
   cursor: pointer;
 }
 
+.save:hover {
+  color: white;
+}
+
 .App {
   max-width: 1060px;
   margin-left: auto;
