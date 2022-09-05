@@ -92,3 +92,7 @@ textarea::placeholder {
   color: #848383;
 }
 
+.clear:hover {
+  cursor: pointer;
+  color: #848383;
+}

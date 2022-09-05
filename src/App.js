@@ -98,8 +98,8 @@ function App() {
         <span className="search-icon">
           <FontAwesomeIcon icon={faMagnifyingGlass} />
         </span>
-        <input type="text" placeholder="Search for Note..." onChange={(e)=>setSearch(e.target.value)} />
-        <span>
+        <input type="text" placeholder="Search for Note..." value={search} onChange={(e)=>setSearch(e.target.value)} />
+        <span className='clear' title='Clear' onClick={() => setSearch("")}>
           <FontAwesomeIcon icon={faTimes} />
         </span>
       </div>
