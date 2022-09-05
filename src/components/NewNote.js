@@ -7,9 +7,9 @@ const NewNote = ({ handleSave }) => {
   //TEXT STATE
   const [text, setText] = useState("");
 
-  const charLimit = 200;
-
+  
   //HANDLE TEXTAREA
+  const charLimit = 200;
   const handleChange = (e) => {
     
     if (charLimit - e.target.value.length >= 0) {
@@ -23,6 +23,7 @@ const NewNote = ({ handleSave }) => {
     setText("");
   }
 
+  //HANDLE CLEAR
   const clear = () => {
     setText("")
   }

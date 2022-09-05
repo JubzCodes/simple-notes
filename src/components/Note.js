@@ -9,14 +9,13 @@ import { useState } from 'react';
 
 const Note = ({ id, text, date, handleEdit, handleDelete }) => {
 
+  //EDIT STATES
   const [clicked, setClicked] = useState(false);
   const [edit, setEdit] = useState('');
 
+  //HANDLE TEXTAREA
   const charLimit = 200;
-
-
   const handleChange = (e) => {
-
     if (charLimit - e.target.value.length >= 0) {
       let edited = {
        id: edit.id,
@@ -27,11 +26,13 @@ const Note = ({ id, text, date, handleEdit, handleDelete }) => {
     }
   };
   
+  //HANDLE EDIT CLICK
   const handleClick = (e) => {
     e.preventDefault();
     setClicked(true);
   }
   
+  //HANDLE EDIT
   const saveEdit = () => {
     handleEdit(edit);
     setClicked(false);
@@ -40,6 +41,7 @@ const Note = ({ id, text, date, handleEdit, handleDelete }) => {
   return (
     <div className="note">
       {clicked === true ? (
+        // {EDIT FORM}
         <>
           <div className="note edit">
             <textarea
@@ -62,6 +64,7 @@ const Note = ({ id, text, date, handleEdit, handleDelete }) => {
           </div>
         </>
       ) : (
+        // {NOTE COMPONENT}
         <>
           <span>{text}</span>
           <div className="footer">

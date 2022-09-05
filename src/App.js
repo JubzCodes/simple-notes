@@ -5,6 +5,8 @@ import { faMagnifyingGlass, faTimes, faNoteSticky } from "@fortawesome/free-soli
 import { useState, useEffect } from 'react'
 
 function App() {
+
+
   //NOTES STATE
   const [notes, setNotes] = useState([
     {
@@ -29,6 +31,7 @@ function App() {
     },
   ]);
 
+  // SEARCH STATE
   const [search, setSearch] = useState("");
 
   //DATE FUNCTION
@@ -58,6 +61,7 @@ function App() {
     return `${day}, ${month} ${date}, ${year}`;
   };
 
+  //HANDLE NEW NOTE
   const addNote = (text) => {
 
     if (text.trim().length > 0) {
@@ -72,8 +76,8 @@ function App() {
     }
   };
 
+  //HANDLE EDIT NOTE
     const editNote = (text,e) => {
-      console.log(text)
       if (text.text.trim().length > 0) {
         let edited = [...notes].filter(note => note.id !== text.id)
         let updated = [
@@ -81,17 +85,18 @@ function App() {
           { id: text.id, text: text.text, date: dateGetter(new Date()) },
         ];
         setNotes(updated);
-        console.log(notes)
       } else {
         alert("No Blank Notes !");
       }
     };
 
+    //HANDLE DELETE NOTE
     const deleteNote = (id) => {
       setNotes(notes.filter((note) => note.id !== id));
     }
     
   
+    //GETS NOTES FROM LOCAL STORAGE
     useEffect(() => {
       const savedNotes = JSON.parse(localStorage.getItem('user-notes'));
       if (savedNotes) {
@@ -99,13 +104,20 @@ function App() {
       }
     },[])
     
+    //SETS NOTES TO LOCAL STORAGE
     useEffect(() => {
       localStorage.setItem('user-notes', JSON.stringify(notes));
     },[notes])
 
+
+
   return (
     <div className="App">
+
+      {/* {TITLE} */}
       <h1>Simple Notes <FontAwesomeIcon className='sticky' icon={faNoteSticky} /></h1>
+
+      {/* {SEARCH BAR} */}
       <div className="search-bar">
         <span className="search-icon">
           <FontAwesomeIcon icon={faMagnifyingGlass} />
@@ -115,6 +127,8 @@ function App() {
           <FontAwesomeIcon icon={faTimes} />
         </span>
       </div>
+
+      {/* {NOTE LIST} */}
       <NoteList notes={notes.filter((note) => note.text.toLocaleLowerCase().includes(search.toLocaleLowerCase()))} handleSave={addNote} handleEdit={editNote} handleDelete={deleteNote}/>
     </div>
   );
