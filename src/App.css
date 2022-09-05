@@ -8,6 +8,8 @@
   padding: 1rem;
   min-height: 170px;
   white-space: pre-wrap;
+  word-break: break-all;
+  flex: 1;
 }
 
 .note.new {
@@ -56,6 +58,7 @@ textarea::placeholder {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding-top: 5%;
 }
 
 .buttons {
