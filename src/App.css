@@ -1,8 +1,27 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(215, 215, 215);
+  padding-top: 10%;
+}
+
+h1 {
+  text-transform: capitalize;
+  font-weight: 900;
+  font-size: 45px;
+}
+
+.sticky {
+  color: rgb(248, 248, 112);
+}
+
 .note {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: aquamarine;
+  background-color: rgb(248, 248, 112);
   margin-bottom: 10px;
   border-radius: 10px;
   padding: 1rem;
@@ -10,16 +29,19 @@
   white-space: pre-wrap;
   word-break: normal;
   flex: 1;
+  box-shadow: 0.25rem 0.25rem 0rem #848383;
 }
 
 .note.new {
   background-color: #848383;
+  box-shadow: 0.25rem 0.25rem 0rem rgb(248, 248, 112);
 }
 
 textarea {
   border: none;
   resize: none;
   background-color: transparent;
+  color: white;
 }
 
 textarea:focus {
@@ -30,12 +52,10 @@ textarea::placeholder {
   color: white;
 }
 
-.save {
-  cursor: pointer;
-}
 
 .save:hover {
-  color: white;
+  cursor: pointer;
+  color: rgb(248, 248, 112);
 }
 
 .App {
@@ -67,8 +87,9 @@ textarea::placeholder {
   gap: 5px;
 }
 
-.edit, .delete {
+.edit:hover, .delete:hover {
   cursor: pointer;
+  color: #848383;
 }
 
 .search-bar {
@@ -92,7 +113,7 @@ textarea::placeholder {
 }
 
 .search-bar input::placeholder {
-  color: #848383;
+  color: rgb(248, 248, 112);
 }
 
 .clear:hover {
@@ -102,5 +123,5 @@ textarea::placeholder {
 
 .eraser:hover {
   cursor: pointer;
-  color: white;
+  color: rgb(248, 248, 112);
 }

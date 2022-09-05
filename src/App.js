@@ -1,7 +1,7 @@
 import './App.css';
 import NoteList from './components/NoteList';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass, faTimes, faNoteSticky } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from 'react'
 
 function App() {
@@ -105,7 +105,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Simple Notes</h1>
+      <h1>Simple Notes <FontAwesomeIcon className='sticky' icon={faNoteSticky} /></h1>
       <div className="search-bar">
         <span className="search-icon">
           <FontAwesomeIcon icon={faMagnifyingGlass} />
