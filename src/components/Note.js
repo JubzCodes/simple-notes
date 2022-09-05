@@ -5,10 +5,10 @@ import {
   faPenToSquare
 } from "@fortawesome/free-solid-svg-icons";
 
-const Note = ({ text, date }) => {
+const Note = ({ id, text, date }) => {
 
   return (
-    <div className='note'>
+    <div className='note' >
       <span>{text}</span>
       <div className='footer'>
         <span>{date}</span>
