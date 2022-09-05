@@ -96,3 +96,8 @@ textarea::placeholder {
   cursor: pointer;
   color: #848383;
 }
+
+.eraser:hover {
+  cursor: pointer;
+  color: white;
+}

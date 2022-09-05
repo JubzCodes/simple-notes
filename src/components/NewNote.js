@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
+import { faCircleCheck, faEraser } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 const NewNote = ({ handleSave }) => {
@@ -23,17 +23,32 @@ const NewNote = ({ handleSave }) => {
     setText("");
   }
 
+  const clear = () => {
+    setText("")
+  }
+
   return (
-    <div className='note new'>
-      <textarea rows='8' cols='10' placeholder='Add a new note :)' value={text} onChange={handleChange} ></textarea>
-      <div className='footer'>
+    <div className="note new">
+      <textarea
+        rows="8"
+        cols="10"
+        placeholder="Add a new note :)"
+        value={text}
+        onChange={handleChange}
+      ></textarea>
+      <div className="footer">
         <span>{charLimit - text.length} Remaining</span>
-        <span className='save' title='Save' onClick={Save}>
+        <span>
+        <span className="save" title="Save" onClick={Save}>
           <FontAwesomeIcon icon={faCircleCheck} size="lg" />
+        </span>
+        <span className="eraser" title="Clear" onClick={clear}>
+          <FontAwesomeIcon icon={faEraser} size="lg" />
+        </span>
         </span>
       </div>
     </div>
-  )
+  );
 }
 
 export default NewNote
