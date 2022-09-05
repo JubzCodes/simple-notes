@@ -11,7 +11,7 @@ function App() {
   const [notes, setNotes] = useState([
     {
       id: 1,
-      text: "Making your hapiness independent from what happens in your personal relationships or career will secure a safety net for your emotional well being",
+      text: "Making your happiness independent from what happens in your personal relationships or career will secure a safety net for your emotional well being",
       date: "Jan 12, 2022",
     },
     {
@@ -21,7 +21,7 @@ function App() {
     },
     {
       id: 3,
-      text: "Subject your ideas to examination rather than acting on impules",
+      text: "Subject your ideas to examination rather than acting on impulses",
       date: "Mar 8, 2022",
     },
     {
@@ -50,15 +50,13 @@ function App() {
       "Nov",
       "Dec",
     ];
-    const days = ["Sun", "Mon", "Tue", "Wed", "Thr", "Fri", "Sat"];
 
-    // using number from newdate function call to display specific date from day & month arrays
-    const day = days[num.getDay()];
+    // using number from newdate function call to display specific date from date & month arrays
     const date = num.getDate();
     const month = months[num.getMonth()];
     const year = num.getFullYear();
 
-    return `${day}, ${month} ${date}, ${year}`;
+    return `${month} ${date}, ${year}`;
   };
 
   //HANDLE NEW NOTE

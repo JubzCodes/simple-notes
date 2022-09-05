@@ -31,6 +31,7 @@ const NewNote = ({ handleSave }) => {
   return (
     <div className="note new">
       <textarea
+        autoFocus
         rows="8"
         cols="10"
         placeholder="Add a new note :)"
@@ -40,12 +41,12 @@ const NewNote = ({ handleSave }) => {
       <div className="footer">
         <span>{charLimit - text.length} Remaining</span>
         <span>
-        <span className="save" title="Save" onClick={Save}>
-          <FontAwesomeIcon icon={faCircleCheck} size="lg" />
-        </span>
-        <span className="eraser" title="Clear" onClick={clear}>
-          <FontAwesomeIcon icon={faEraser} size="lg" />
-        </span>
+          <span className="save" title="Save" onClick={Save}>
+            <FontAwesomeIcon icon={faCircleCheck} size="lg" />
+          </span>
+          <span className="eraser" title="Clear" onClick={clear}>
+            <FontAwesomeIcon icon={faEraser} size="lg" />
+          </span>
         </span>
       </div>
     </div>
