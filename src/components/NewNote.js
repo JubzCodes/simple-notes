@@ -7,11 +7,17 @@ const NewNote = ({ handleSave }) => {
   //TEXT STATE
   const [text, setText] = useState("");
 
+  const charLimit = 200;
+
   //HANDLE TEXTAREA
   const handleChange = (e) => {
-    setText(e.target.value)
+    
+    if (charLimit - e.target.value.length >= 0) {
+      setText(e.target.value);
+    }
   }
 
+  //HANDLE SAVE
   const Save = () => {
     handleSave(text);
     setText("");
@@ -21,7 +27,7 @@ const NewNote = ({ handleSave }) => {
     <div className='note new'>
       <textarea rows='8' cols='10' placeholder='Add a new note :)' value={text} onChange={handleChange} ></textarea>
       <div className='footer'>
-        <span>200 Remaining</span>
+        <span>{charLimit - text.length} Remaining</span>
         <span className='save' title='Save' onClick={Save}>
           <FontAwesomeIcon icon={faCircleCheck} size="lg" />
         </span>

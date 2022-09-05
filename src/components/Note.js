@@ -12,13 +12,19 @@ const Note = ({ id, text, date, handleEdit }) => {
   const [clicked, setClicked] = useState(false);
   const [edit, setEdit] = useState('');
 
+  const charLimit = 200;
+
+
   const handleChange = (e) => {
-    let edited = {
-      id: edit.id,
-      text: e.target.value,
-      date:date
-    }
+
+    if (charLimit - e.target.value.length >= 0) {
+      let edited = {
+       id: edit.id,
+       text: e.target.value,
+       date:date
+     }
     setEdit(edited);
+    }
   };
   
   const handleClick = (e) => {
@@ -45,7 +51,7 @@ const Note = ({ id, text, date, handleEdit }) => {
               onChange={handleChange}
             />
             <div className="footer">
-              <span>200 Remaining</span>
+              <span>{edit? (charLimit - edit.text.length):(charLimit - text.length)} Remaining</span>
               <span className="save" title="Save Change" onClick={saveEdit}>
                 <FontAwesomeIcon icon={faCircleCheck} size="lg" />
               </span>
