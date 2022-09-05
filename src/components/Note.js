@@ -7,7 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from 'react';
 
-const Note = ({ id, text, date, handleEdit }) => {
+const Note = ({ id, text, date, handleEdit, handleDelete }) => {
 
   const [clicked, setClicked] = useState(false);
   const [edit, setEdit] = useState('');
@@ -70,7 +70,7 @@ const Note = ({ id, text, date, handleEdit }) => {
                   onClick={() => setEdit({ id: id, text: text, date: date })}
                 />
               </span>
-              <span className="delete" title="Delete">
+              <span className="delete" title="Delete" onClick={() => handleDelete(id)}>
                 <FontAwesomeIcon icon={faTrashCan} />
               </span>
             </div>

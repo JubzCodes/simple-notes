@@ -85,6 +85,10 @@ function App() {
       }
     };
 
+    const deleteNote = (id) => {
+      setNotes(notes.filter((note) => note.id !== id));
+    }
+
   return (
     <div className="App">
       <h1>Simple Notes</h1>
@@ -97,7 +101,7 @@ function App() {
           <FontAwesomeIcon icon={faTimes} />
         </span>
       </div>
-      <NoteList notes={notes} handleSave={addNote} handleEdit={editNote}/>
+      <NoteList notes={notes} handleSave={addNote} handleEdit={editNote} handleDelete={deleteNote}/>
     </div>
   );
 }
