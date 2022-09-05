@@ -57,13 +57,14 @@ function App() {
   };
 
   const addNote = (text) => {
-    if (text) {
+    if (text.trim().length > 0) {
       let num = notes.length + 1;
       setNotes([
         ...notes,
-        { id: num, text: text, date: dateGetter(new Date()) },
+        { id: num, text: text, date: dateGetter(new Date())},
       ]);
     }
+    alert("Note Cannot Be Blank!");
   };
 
   return (
