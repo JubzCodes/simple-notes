@@ -70,6 +70,21 @@ function App() {
     }
   };
 
+    const editNote = (text,e) => {
+      console.log(text)
+      if (text.text.trim().length > 0) {
+        let edited = [...notes].filter(note => note.id !== text.id)
+        let updated = [
+          ...edited,
+          { id: text.id, text: text.text, date: dateGetter(new Date()) },
+        ];
+        setNotes(updated);
+        console.log(notes)
+      } else {
+        alert("No Blank Notes !");
+      }
+    };
+
   return (
     <div className="App">
       <h1>Simple Notes</h1>
@@ -82,7 +97,7 @@ function App() {
           <FontAwesomeIcon icon={faTimes} />
         </span>
       </div>
-      <NoteList notes={notes} handleSave={addNote} />
+      <NoteList notes={notes} handleSave={addNote} handleEdit={editNote}/>
     </div>
   );
 }
