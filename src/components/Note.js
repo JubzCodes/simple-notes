@@ -5,12 +5,13 @@ import {
   faPenToSquare
 } from "@fortawesome/free-solid-svg-icons";
 
-const Note = () => {
+const Note = ({ text, date }) => {
+
   return (
     <div className='note'>
-      <span>Code an app today</span>
+      <span>{text}</span>
       <div className='footer'>
-        <span>date</span>
+        <span>{date}</span>
         <div className='buttons'>
         <span className='edit' title='Edit'>
         <FontAwesomeIcon icon={faPenToSquare} />

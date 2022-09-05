@@ -48,7 +48,7 @@ function App() {
         <FontAwesomeIcon icon={faTimes}/>
       </span>
       </div>
-      <NoteList/>
+      <NoteList notes={notes}/>
     </div>
   );
 }
