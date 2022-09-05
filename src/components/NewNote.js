@@ -13,7 +13,8 @@ const NewNote = ({ handleSave }) => {
   }
 
   const Save = () => {
-    handleSave(text)
+    handleSave(text);
+    setText("");
   }
 
   return (
