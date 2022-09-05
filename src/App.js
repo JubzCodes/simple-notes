@@ -2,7 +2,7 @@ import './App.css';
 import NoteList from './components/NoteList';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faTimes } from "@fortawesome/free-solid-svg-icons";
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function App() {
   //NOTES STATE
@@ -90,6 +90,18 @@ function App() {
     const deleteNote = (id) => {
       setNotes(notes.filter((note) => note.id !== id));
     }
+    
+  
+    useEffect(() => {
+      const savedNotes = JSON.parse(localStorage.getItem('user-notes'));
+      if (savedNotes) {
+        setNotes(savedNotes);
+      }
+    },[])
+    
+    useEffect(() => {
+      localStorage.setItem('user-notes', JSON.stringify(notes));
+    },[notes])
 
   return (
     <div className="App">
@@ -103,7 +115,7 @@ function App() {
           <FontAwesomeIcon icon={faTimes} />
         </span>
       </div>
-      <NoteList notes={notes.filter((note) => note.text.toLocaleLowerCase().includes(search))} handleSave={addNote} handleEdit={editNote} handleDelete={deleteNote}/>
+      <NoteList notes={notes.filter((note) => note.text.toLocaleLowerCase().includes(search.toLocaleLowerCase()))} handleSave={addNote} handleEdit={editNote} handleDelete={deleteNote}/>
     </div>
   );
 }
