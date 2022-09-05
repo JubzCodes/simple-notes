@@ -29,6 +29,8 @@ function App() {
     },
   ]);
 
+  const [search, setSearch] = useState("");
+
   //DATE FUNCTION
   const dateGetter = (num) => {
     const months = [
@@ -96,12 +98,12 @@ function App() {
         <span className="search-icon">
           <FontAwesomeIcon icon={faMagnifyingGlass} />
         </span>
-        <input type="text" placeholder="Search for Note..." />
+        <input type="text" placeholder="Search for Note..." onChange={(e)=>setSearch(e.target.value)} />
         <span>
           <FontAwesomeIcon icon={faTimes} />
         </span>
       </div>
-      <NoteList notes={notes} handleSave={addNote} handleEdit={editNote} handleDelete={deleteNote}/>
+      <NoteList notes={notes.filter((note) => note.text.toLocaleLowerCase().includes(search))} handleSave={addNote} handleEdit={editNote} handleDelete={deleteNote}/>
     </div>
   );
 }
