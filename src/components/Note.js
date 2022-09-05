@@ -27,9 +27,10 @@ const Note = ({ id, text, date, handleEdit, handleDelete }) => {
   };
   
   //HANDLE EDIT CLICK
-  const handleClick = (e) => {
-    e.preventDefault();
-    setClicked(true);
+  const handleClick = () => {
+    if (clicked == false) {
+      setClicked(true);
+    }
   }
   
   //HANDLE EDIT
@@ -40,7 +41,7 @@ const Note = ({ id, text, date, handleEdit, handleDelete }) => {
 
   return (
     <div className="note">
-      {clicked === true ? (
+      {clicked == true ? (
         // {EDIT FORM}
         <>
           <div className="note edit">

@@ -3,6 +3,7 @@ import NoteList from './components/NoteList';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faTimes, faNoteSticky } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from 'react'
+import { nanoid } from 'nanoid';
 
 function App() {
 
@@ -10,22 +11,22 @@ function App() {
   //NOTES STATE
   const [notes, setNotes] = useState([
     {
-      id: 1,
+      id: nanoid(),
       text: "Making your happiness independent from what happens in your personal relationships or career will secure a safety net for your emotional well being",
       date: "Jan 12, 2022",
     },
     {
-      id: 2,
+      id: nanoid(),
       text: "Do hard work as long as it's not motivated by ambition for ambition's sake",
       date: "Feb 19, 2022",
     },
     {
-      id: 3,
+      id: nanoid(),
       text: "Subject your ideas to examination rather than acting on impulses",
       date: "Mar 8, 2022",
     },
     {
-      id: 4,
+      id: nanoid(),
       text: "Would you rather live a life of blissful ignorance of the world around you, or be enlightened to the true nature of the world but rejected by the rest of society",
       date: "Apr 11, 2022",
     },
@@ -63,10 +64,9 @@ function App() {
   const addNote = (text) => {
 
     if (text.trim().length > 0) {
-      let num = notes.length + 1;
       setNotes([
         ...notes,
-        { id: num, text: text, date: dateGetter(new Date())},
+        { id: nanoid(), text: text, date: dateGetter(new Date())},
       ]);
     }
     else {
@@ -75,7 +75,7 @@ function App() {
   };
 
   //HANDLE EDIT NOTE
-    const editNote = (text,e) => {
+    const editNote = (text) => {
       if (text.text.trim().length > 0) {
         let edited = [...notes].filter(note => note.id !== text.id)
         let updated = [
